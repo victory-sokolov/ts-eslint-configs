@@ -12,7 +12,8 @@
     "lint:fix": "npm run lint --fix",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test:coverage": "npm run test -- --coverage",
-    "check-updates": "ncu -u"
+    "check-updates": "ncu -u",
+    "commit": "clear && git-cz"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
@@ -33,6 +34,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -41,6 +43,11 @@
       "npm run format",
       "npm run lint:fix",
       "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
