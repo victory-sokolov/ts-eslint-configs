@@ -5,7 +5,9 @@
     },
     "extends": [
         "eslint:recommended",
+        "react-app",
         "prettier",
+        "prettier/@typescript-eslint",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -21,6 +23,7 @@
     },
     "plugins": [
         "react",
+        "react-hooks",
         "@typescript-eslint",
         "prettier"
     ],
@@ -41,6 +44,14 @@
             "error",
             "never"
         ],
-        "no-console":"warn"
+        "no-console":"warn",
+        "@typescript-eslint/consistent-type-definitions": [
+            "warn",
+            "type"
+        ],
+        "import/no-extraneous-dependencies": "warn",
+        "prefer-const": "warn",
+        "react/jsx-curly-brace-presence": "warn",
+        "react-hooks/rules-of-hooks": "error"
     }
 }
