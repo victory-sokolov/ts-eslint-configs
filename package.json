@@ -13,7 +13,9 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test:coverage": "npm run test -- --coverage",
     "check-updates": "ncu -u",
-    "commit": "clear && git-cz"
+    "commit": "clear && git-cz",
+    "preinstall": "$npm_execpath --silent run checkyarn",
+    "checkyarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use yarn not npm! ⚠️ ' && echo && exit 1)"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
