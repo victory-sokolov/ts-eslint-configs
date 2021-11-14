@@ -24,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-jest": "^27.3.1",
+    "detect-secrets": "^1.0.6",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -47,12 +48,15 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged detect-secrets-launcher src/**/*.{js,jsx,tsx,ts}"
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}": [
       "npm run format",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
       "npm run lint:fix",
       "git add"
     ]
