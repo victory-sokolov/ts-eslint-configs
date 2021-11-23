@@ -1,7 +1,3 @@
-# Ignore artifacts:
-build
-coverage
-
 **/*.min.js
 **/*.min.css
 
