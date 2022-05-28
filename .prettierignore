@@ -4,6 +4,7 @@
 .idea/
 *.html
 .next
+.cache/
 dist/
 build/
 coverage/
