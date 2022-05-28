@@ -45,7 +45,7 @@
             "error",
             "never"
         ],
-        "no-console":"warn",
+        "no-console": "warn",
         "@typescript-eslint/consistent-type-definitions": [
             "warn",
             "type"
@@ -53,6 +53,7 @@
         "import/no-extraneous-dependencies": "warn",
         "prefer-const": "warn",
         "react/jsx-curly-brace-presence": "warn",
-        "react-hooks/rules-of-hooks": "error"
+        "react-hooks/rules-of-hooks": "error",
+        "@typescript-eslint/no-var-requires": "error"
     }
 }
